@@ -15,6 +15,13 @@ sub new {
 	$self->{exists} = 0;
 	$self->{type} = 0;
 
+	if($masterServer->{itemListType}) {
+		$self->{hooks} = Plugins::addHooks (
+			['packet/item_list_start',      \&onitemListStart, $self],
+			['packet/item_list_end',       sub { $self->onitemListEnd; }],
+		);
+	}
+
 	return $self;
 }
 
@@ -80,20 +87,19 @@ sub item_max_stack {
 }
 
 sub onitemListStart {
-	my ($self) = @_;
-	$self->clear();
-	if (!$self->{exists}) {
-		$self->{exists} = 1;
+	my ($hook_name, $args, $self) = @_;
+	if($args->{type} == 0x1) {
+		$self->clear();
+		if (!$self->{exists}) {
+			$self->{exists} = 1;
+		}
 	}
 }
 
 sub onitemListEnd {
 	my ($self) = @_;
-	if (!$self->{exists}) {
-		$self->{exists} = 1;
+	if($current_item_list == 0x1) {
 		Plugins::callHook('cart_ready');
-	} else {
-		Plugins::callHook('cart_info_updated');
 	}
 }
 

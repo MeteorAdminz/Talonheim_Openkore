@@ -177,6 +177,7 @@ sub iterate {
 	$slave->processWasFound;
 	$slave->processTeleportToMaster;
 	$slave->processAutoAttack;
+	$slave->processCheckMonster;
 	$slave->processFollow;
 	$slave->processIdleWalk;
 }
@@ -361,7 +362,7 @@ sub processAutoAttack {
 	
 	return if (!$field);
 	if (
-	    ($slave->isIdle || $slave->is(qw/route/))
+	    ($slave->isIdle || $slave->is(qw/route checkMonsters/))
 	 &&   (
 	       AI::isIdle
 	    || AI::is(qw(follow sitAuto attack skill_use))
@@ -505,6 +506,20 @@ sub processAutoAttack {
 	}
 
 	#Benchmark::end("ai_homunculus_autoAttack") if DEBUG;
+}
+
+sub processCheckMonster {
+	my $slave = shift;
+	return if ($slave->inQueue("attack"));
+	return if (!$slave->inQueue("checkMonsters"));
+	return if (!$slave->is("checkMonsters"));
+
+	$timeout{$slave->{ai_check_monster_auto}}{'time'} = time if !$timeout{$slave->{ai_check_monster_auto}}{'time'};
+
+	if(timeOut($timeout{$slave->{ai_check_monster_auto}})) {
+		$slave->dequeue;
+		undef $timeout{$slave->{ai_check_monster_auto}}{'time'};
+	}
 }
 
 sub sendAttack {

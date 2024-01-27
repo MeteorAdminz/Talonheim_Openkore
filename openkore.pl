@@ -106,7 +106,7 @@ sub parseArguments {
 		Settings::parseArguments();
 		if ($Settings::options{version}) {
 			print "$Settings::versionText\n";
-			exit 0;
+			exit 1;
 		}
 	};
 	if (my $e = caught('IOException', 'ArgumentException')) {
@@ -124,7 +124,7 @@ sub parseArguments {
 sub checkEmptyArguments {
 	if ( $Settings::options{help} ) {
 		print Settings::getUsageText();
-		exit 0;
+		exit 1;
 	}
 	eval {
 		use Getopt::Long;

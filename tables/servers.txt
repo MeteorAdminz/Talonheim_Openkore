@@ -7,7 +7,7 @@
 # in such a way it requires user confirmation to correctly select a subserver
 
 # https://talonheim.com
-[Talonheim Online]
+[Talonheim]
 ip talonheim.com
 port 6900
 private 1

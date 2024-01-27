@@ -57,12 +57,65 @@
 # Monsters not found in this file, or flags not specified will default to:
 # <attack> = 1
 
+all -1
+
+1133 1 0 1
+1135 1 0 1
+1134 1 0 1
+1282 0 0 0
+Golem 0 0 0
+Poison Spore 1 0 1
+
+Willow 0 0 0
+Spore 0 0 0
+Boa 0 0 0 
+Wolf 1 0 1
+
+Chonchon 0 0 0
+Dragon Fly 2 0 1
+Muka 1 0 1
+Steel Chonchon 0 0 0
+Magnolia 0 0 0
+Andre 0 0 0
+Piere 0 0 0
+Deniro 0 0 0
+Hunter Fly 0 -4 0
+Hunterfly 0 -4 0
+Metaller 0 0 0
+
+Creamy 1 0 1
+Poporing 0 0 0
+Ambernite 0 0 0
+
+poporing 0 0 0
+Marina 1 0 1
+Vadon 1 0 1
+Plankton 1 0 1
+Kukre 1 0 1
+
+Sleeper 1 0 1
+Grand Peco Ring Leader 1 0 1
+Grand Peco 1 0 1
+Geographer 1 0 1
+Goat 1 0 1
+
+Scorpion 1 0 1
+Condor 1 0 1
+Baby Desert Wolf 1 0 1
+
+Lunatic 1 0 1
+Mini Poring 0 0 0
+Poring  0 0 0
+Fabre 0 0 0
+Little Poring 0 0 0
+PecoPeco 0 0 0
+Muka 1 0 1
 
 ##### Eggs #####
-Ant's Egg 0 0 0
-PecoPeco's Egg 0 0 0
-Pupa 0 0 0
-Thief Bug's Egg 0 0 0
+Ant's Egg 1 0 1
+PecoPeco's Egg 1 0 1
+Pupa 1 2 1
+Thief Bug's Egg 1 0 1
 
 ##### Alchemist Summons ####
 # Summoned Parasite

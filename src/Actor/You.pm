@@ -309,7 +309,7 @@ sub attack {
 					$Req = $char->inventory->getByName($config{"autoSwitch_${i}_rightHand"});
 					if ($Req && !$Req->{equipped}){
 						message TF("Auto Equiping [R]: %s\n", $config{"autoSwitch_$i"."_rightHand"}), "equip";
-						%eq_list = (rightHand => $config{"autoSwitch_${i}_rightHand"});
+						%eq_list = (rightHand => $Req->{binID});
 					}
 
 				}
@@ -335,7 +335,7 @@ sub attack {
 
 						if ($Leq) {
 							message TF("Auto Equiping [L]: %s (%s)\n", $config{"autoSwitch_$i"."_leftHand"}, $Leq), "equip";
-							$eq_list{leftHand} = $config{"autoSwitch_${i}_leftHand"};
+							$eq_list{leftHand} = $Leq->{binID};
 						}
 					}
 				}
@@ -377,7 +377,7 @@ sub attack {
 			$Req = $char->inventory->getByName($config{"autoSwitch_default_rightHand"});
 			if ($Req && !$Req->{equipped}){
 				message TF("Auto Equiping [R]: %s\n", $config{"autoSwitch_default_rightHand"}), "equip";
-				%eq_list = (rightHand => $config{"autoSwitch_default_rightHand"});
+				%eq_list = (rightHand => $Req->{binID});
 			}
 
 		}
@@ -404,7 +404,7 @@ sub attack {
 
 				if ($Leq) {
 					message TF("Auto Equiping [L]: %s\n", $config{"autoSwitch_default_leftHand"}), "equip";
-					$eq_list{leftHand} = $config{"autoSwitch_default_leftHand"};
+					$eq_list{leftHand} = $Leq->{binID};
 				}
 			}
 		}
@@ -441,9 +441,5 @@ sub sendSit {
 }
 sub sendStand { $messageSender->sendAction(0, ACTION_STAND) }
 sub sendMove { $messageSender->sendMove(@_[1, 2]) }
-sub sendStopSkillUse {
-	my ($self) = @_;
-	$messageSender->sendStopSkillUse($self->{last_continuous_skill_used});
-}
 
 1;

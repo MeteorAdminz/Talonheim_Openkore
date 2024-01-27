@@ -397,7 +397,7 @@ sub processChatCommand {
 
 	} elsif ($switch eq "town") {
 		sendMessage($messageSender, $type, getResponse("moveS"), $user);
-		ai_useTeleport(2);
+		main::useTeleport(2);
 
 	} elsif ($switch eq "version") {
 		$vars->{ver} = $Settings::VERSION;
