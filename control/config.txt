@@ -1,13 +1,14 @@
-#plugin
-teleport_search 1
-teleport_search_minSp 300
+# Please Read the Users Manual
+# The Manual is located at https://openkore.com/wiki/Manual
 
-master Talonheim
-server 0
-username 
-password 
+######## Login options and server-specific options ########
+
+master
+server
+username
+password
 loginPinCode
-char 0
+char
 
 # Poseidon Settings: https://openkore.com/wiki/Poseidon
 # They must be the same as Query Server config in Poseidon.txt
@@ -20,26 +21,23 @@ forceMapIP
 # 1 = hook into RO client, 2 = Act as stand-alone proxy, proxy = act as true proxy
 # https://openkore.com/wiki/XKore
 XKore 3
-XKore_port 6902
+XKore_port 2350
 XKore_dll NetRedirect.dll
 XKore_injectDLL 1
 XKore_autoAttachIfOneExe 1
 XKore_silent 1
 XKore_bypassBotDetection 0
-XKore_exeName TalonheimClient.exe
-
-bindIp
-forceMapIP
+XKore_exeName ragexe.exe
 
 # XKore 2 / Proxy configuration
 XKore_listenIp 127.0.0.1
-XKore_listenPort 6902
+XKore_listenPort 6901
 XKore_publicIp 127.0.0.1
 XKore_ID
 
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
-adminPassword tiprauch
+adminPassword
 callSign
 commandPrefix ;
 callSignGM 0
@@ -67,27 +65,28 @@ allowedMaps_reaction 1
 attackAuto 2
 attackAuto_party 1
 attackAuto_onlyWhenSafe 0
-attackAuto_followTarget 0
-attackAuto_inLockOnly 0
+attackAuto_followTarget 1
+attackAuto_inLockOnly 1
 attackAuto_notInTown 1
 attackAuto_notWhile_storageAuto 1
 attackAuto_notWhile_buyAuto 1
 attackAuto_notWhile_sellAuto 1
 attackAuto_considerDamagedAggressive 0
 attackBeyondMaxDistance_waitForAgressive 1
-attackDistance 12
+attackDistance 1
 attackDistanceAuto 0
-attackMaxDistance 12
+attackMaxDistance 1
 attackMaxRouteDistance 50
 attackMaxRouteTime 4
-attackMinPlayerDistance 0
+attackMinPlayerDistance 2
 attackMinPortalDistance 4
 attackUseWeapon 1
 attackNoGiveup 0
 attackCanSnipe 0
-attackCheckLOS 1
+attackCheckLOS 0
 attackRouteMaxPathDistance 13
-attackLooters 1
+attackLooters 0
+attackLooters_dist 1
 attackChangeTarget 1
 aggressiveAntiKS 0
 
@@ -103,8 +102,8 @@ attackEquip_midHead
 attackEquip_lowHead
 attackEquip_leftHand
 attackEquip_rightHand
-attackEquip_leftAccessory Clip [Creamy] [1]
-attackEquip_rightAccessory Clip [1]
+attackEquip_leftAccessory
+attackEquip_rightAccessory
 attackEquip_robe
 attackEquip_armor
 attackEquip_shoes
@@ -139,6 +138,7 @@ autoResponseOnHeal 0
 
 autoSpell
 autoSpell_safe
+autoPoison
 
 avoidGM_namePattern
 avoidGM_near 0
@@ -153,13 +153,13 @@ avoidList_reconnect 1800
 avoidList_ignoreList
 
 avoidHiddenActors 0
+avoidHiddenMonsters 0
 
 cachePlayerNames 1
 cachePlayerNames_duration 900
 cachePlayerNames_maxSize 100
 
-clientSight 21
-clientSight_removeBeyond 2
+clientSight 17
 
 dcPause 1
 dcOnDeath 0
@@ -192,6 +192,8 @@ itemsTakeAuto 2
 itemsTakeAuto_party 0
 itemsGatherAuto 2
 itemsGatherAuto_notInTown 0
+itemsGatherAutoMinPlayerDistance 6
+itemsGatherAutoMinPortalDistance 5
 itemsMaxWeight 89
 itemsMaxWeight_sellOrStore 48
 itemsMaxNum_sellOrStore 99
@@ -199,7 +201,7 @@ cartMaxWeight 7900
 itemsTakeGreed 0
 itemsCheckWeight 1
 
-lockMap gef_fild13
+lockMap
 lockMap_x
 lockMap_y
 lockMap_randX
@@ -216,7 +218,7 @@ route_maxWarpFee
 route_maxNpcTries 5
 route_teleport 0
 route_teleport_minDistance 75
-route_teleport_maxTries 3
+route_teleport_maxTries 8
 route_teleport_notInMaps
 route_step 10
 route_removeMissingPortals_NPC 1
@@ -230,7 +232,7 @@ runFromTarget_dist 5
 runFromTarget_minStep 7
 runFromTarget_maxPathDistance 13
 
-saveMap geffen
+saveMap
 saveMap_warpToBuyOrSell 1
 saveMap_warpChatCommand
 memo1
@@ -245,10 +247,10 @@ shop_useSkill 1
 buyerShopAuto_open 0
 buyerShop_random 0
 
-sitAuto_hp_lower 55
-sitAuto_hp_upper 66
-sitAuto_sp_lower 27
-sitAuto_sp_upper 77
+sitAuto_hp_lower 40
+sitAuto_hp_upper 100
+sitAuto_sp_lower 0
+sitAuto_sp_upper 0
 sitAuto_follow 0
 sitAuto_over_50 0
 sitAuto_idle 1
@@ -267,16 +269,16 @@ skillsAddAuto_list
 tankMode 0
 tankModeTarget
 
-teleportAuto_search 0
-teleportAuto_hp 15
-teleportAuto_sp 10
-teleportAuto_idle 1
+teleportAuto_hp 10
+teleportAuto_sp 0
+teleportAuto_idle 0
 teleportAuto_portal 0
+teleportAuto_search 0
 teleportAuto_minAggressives 0
-teleportAuto_minAggressivesInLock 11
+teleportAuto_minAggressivesInLock 0
 teleportAuto_onlyWhenSafe 0
-teleportAuto_maxDmg 1222
-teleportAuto_maxDmgInLock 1222
+teleportAuto_maxDmg 500
+teleportAuto_maxDmgInLock 0
 teleportAuto_deadly 1
 teleportAuto_useSkill 1
 teleportAuto_useChatCommand
@@ -288,13 +290,14 @@ teleportAuto_unstuck 0
 teleportAuto_lostTarget 0
 teleportAuto_dropTarget 0
 teleportAuto_dropTargetKS 0
+teleportAuto_dropTargetHidden 0
 teleportAuto_attackedWhenSitting 0
 teleportAuto_totalDmg 0
 teleportAuto_totalDmgInLock 0
-teleportAuto_equip_leftAccessory Clip [Creamy] [1]
-teleportAuto_equip_rightAccessory Clip [1]
+teleportAuto_equip_leftAccessory
+teleportAuto_equip_rightAccessory
 teleportAuto_lostHomunculus
-teleportAuto_useItemForRespawn 1
+teleportAuto_useItemForRespawn
 teleportAuto_item1
 teleportAuto_item2
 
@@ -343,6 +346,7 @@ logConsole 1
 logAppendUsername 1
 logAppendServer 0
 monsterLog 0
+playerLog 0
 logDead 1
 
 questDisplayStyle 2
@@ -372,46 +376,178 @@ status_mapType 0
 
 monster_filter
 
-attackSkillSlot Double Strafe {
-	lvl 10
-	dist
-	maxDist 12
-	maxCastTime 0
-	minCastTime 0
-	hp > 60%
-	sp > 50%
-	aggressives
-	inLockOnly 0
-	timeout 0
-	disabled 0
-	monsters Creamy
-	equip_leftAccessory Clip [Creamy] [1]
-	equip_rightAccessory Clip [1]
-	notMonsters
-	monstersCount
-	maxAttempts 0
-	maxUses 0
-	inInventory
-	isSelfSkill 0
-	manualAI 0
-}
+######## Mercenary Support ########
 
+mercenary_attackAuto 2
+mercenary_attackAuto_party 1
+mercenary_attackAuto_notInTown 1
+mercenary_attackAuto_inLockOnly 1
+mercenary_attackAuto_considerDamagedAggressive 0
+mercenary_attackBeyondMaxDistance_waitForAgressive 1
+mercenary_attackAuto_onlyWhenSafe 0
+mercenary_attackAuto_duringRandomWalk 0
+mercenary_attackAuto_duringItemsTake 0
+mercenary_attackDistance 1
+mercenary_attackMaxDistance 1
+mercenary_attackDistanceAuto 0
+mercenary_attackMaxRouteTime 4
+mercenary_attackCanSnipe 0
+mercenary_attackCheckLOS 1
+mercenary_attackRouteMaxPathDistance 20
+mercenary_attackNoGiveup 0
+mercenary_attackChangeTarget 1
+mercenary_attack_dance_melee 0
+mercenary_attack_dance_ranged 0
+
+mercenary_lost_teleportToMaster_maxTries 6
+
+mercenary_route_randomWalk_rescueWhenLost 0
+mercenary_route_randomWalk_stopDuringAttack 0
+mercenary_route_randomWalk_waitMinDistance 0
+
+mercenary_runFromTarget 0
+mercenary_runFromTarget_inAdvance 0
+mercenary_runFromTarget_dist 5
+mercenary_runFromTarget_minStep 7
+mercenary_runFromTarget_maxPathDistance 20
+
+mercenary_followDistanceMax 12
+mercenary_followDistanceMin 3
+
+mercenary_moveNearWhenIdle 1
+mercenary_moveNearWhenIdle_minDistance 2
+mercenary_moveNearWhenIdle_maxDistance 12
+
+mercenary_idleWalkType 1
+
+mercenary_route_step 10
+
+mercenary_tankMode 0
+mercenary_tankModeTarget
+
+mercenary_teleportAuto_hp 10
+mercenary_teleportAuto_maxDmg 500
+mercenary_teleportAuto_maxDmgInLock 0
+mercenary_teleportAuto_deadly 1
+mercenary_teleportAuto_unstuck 0
+mercenary_teleportAuto_dropTarget 0
+mercenary_teleportAuto_dropTargetKS 0
+mercenary_teleportAuto_totalDmg 0
+mercenary_teleportAuto_totalDmgInLock 0
+mercenary_teleportAuto_attackedWhenSitting 0
+
+######## Homunculus Support ########
+
+homunculus_attackAuto 2
+homunculus_attackAuto_party 1
+homunculus_attackAuto_notInTown 1
+homunculus_attackAuto_inLockOnly 1
+homunculus_attackAuto_considerDamagedAggressive 0
+homunculus_attackBeyondMaxDistance_waitForAgressive 1
+homunculus_attackAuto_onlyWhenSafe 0
+homunculus_attackAuto_duringRandomWalk 0
+homunculus_attackAuto_duringItemsTake 0
+homunculus_attackDistance 1
+homunculus_attackMaxDistance 1
+homunculus_attackDistanceAuto 0
+homunculus_attackMaxRouteTime 4
+homunculus_attackCanSnipe 0
+homunculus_attackCheckLOS 1
+homunculus_attackRouteMaxPathDistance 20
+homunculus_attackNoGiveup 0
+homunculus_attackChangeTarget 1
+homunculus_attack_dance_melee 0
+
+homunculus_lost_teleportToMaster_maxTries 6
+
+homunculus_route_randomWalk_rescueWhenLost 0
+homunculus_route_randomWalk_stopDuringAttack 0
+homunculus_route_randomWalk_waitMinDistance 0
+
+homunculus_runFromTarget 0
+homunculus_runFromTarget_dist 5
+homunculus_runFromTarget_minStep 7
+homunculus_runFromTarget_maxPathDistance 20
+
+homunculus_followDistanceMax 12
+homunculus_followDistanceMin 3
+
+homunculus_moveNearWhenIdle 1
+homunculus_moveNearWhenIdle_minDistance 2
+homunculus_moveNearWhenIdle_maxDistance 12
+
+homunculus_idleWalkType 1
+
+homunculus_route_step 10
+
+homunculus_tankMode 0
+homunculus_tankModeTarget
+
+homunculus_StandByAuto 0
+homunculus_teleportAuto_hp 10
+homunculus_teleportAuto_maxDmg 500
+homunculus_teleportAuto_maxDmgInLock 0
+homunculus_teleportAuto_deadly 1
+homunculus_teleportAuto_unstuck 0
+homunculus_teleportAuto_dropTarget 0
+homunculus_teleportAuto_dropTargetKS 0
+homunculus_teleportAuto_totalDmg 0
+homunculus_teleportAuto_totalDmgInLock 0
+homunculus_teleportAuto_attackedWhenSitting 0
+
+# Turn on/off homunculus autofeeding
+homunculus_autoFeed 1
+# Feed homunculus when meet the hunger value (homunculus_hunger > homunculus_return)
+homunculus_hunger 15
+# Return homunculus when meet the hunger value
+homunculus_return 11
+# In Wich maps should we allow feeding? (leave empty for any map)
+homunculus_autoFeedAllowedMaps
+
+# Turn on/off pet autofeeding
+pet_autoFeed 1
+# Feed pet when meet the hunger value
+pet_hunger 25
+# Return pet when meet the hunger value
+pet_return 20
+
+######## Block options ########
+# You can copy & paste any block multiple times. So if you want to
+# configure two attack skills, just duplicate the attackSkillSlot block.
 
 attackSkillSlot {
 	lvl
-	dist
-	maxDist
+	dist 1
+	maxDist 1
 	maxCastTime 0
 	minCastTime 0
-	hp > 60
-	sp > 40
+	hp
+	sp > 10
+	homunculus
+	homunculus_hp
+	homunculus_sp
+	homunculus_dead
+	homunculus_resting
+	homunculus_onAction
+	homunculus_notOnAction
+	homunculus_whenIdle
+	homunculus_whenNotIdle
+	mercenary
+	mercenary_hp
+	mercenary_sp
+	mercenary_whenStatusActive
+	mercenary_whenStatusInactive
+	mercenary_onAction
+	mercenary_notOnAction
+	mercenary_whenIdle
+	mercenary_whenNotIdle
 	onAction
 	whenStatusActive
 	whenStatusInactive
 	whenFollowing
-	spirit > 0
+	spirit
 	amuletType
-	aggressives < 4
+	aggressives
 	previousDamage
 	stopWhenHit 0
 	inLockOnly 0
@@ -421,6 +557,7 @@ attackSkillSlot {
 	monsters
 	notMonsters
 	monstersCount
+	monstersCountDist
 	maxAttempts 0
 	maxUses 0
 	target_hp
@@ -431,6 +568,7 @@ attackSkillSlot {
 	whenPartyMembersNearDist
 	inInventory
 	isSelfSkill 0
+	isStartSkill 0
 	equip_topHead
 	equip_midHead
 	equip_lowHead
@@ -456,15 +594,33 @@ attackComboSlot {
 	monsters
 	notMonsters
 	monstersCount
+	monstersCountDist
 	whenPartyMembersNear
 	whenPartyMembersNearDist
 }
 
-doCommand tele {
+doCommand {
 	hp
 	sp
-	onAction route
-	notonAction attack
+	homunculus
+	homunculus_hp
+	homunculus_sp
+	homunculus_dead
+	homunculus_resting
+	homunculus_onAction
+	homunculus_notOnAction
+	homunculus_whenIdle
+	homunculus_whenNotIdle
+	mercenary
+	mercenary_hp
+	mercenary_sp
+	mercenary_whenStatusActive
+	mercenary_whenStatusInactive
+	mercenary_onAction
+	mercenary_notOnAction
+	mercenary_whenIdle
+	mercenary_whenNotIdle
+	onAction
 	whenStatusActive
 	whenStatusInactive
 	whenFollowing
@@ -473,13 +629,14 @@ doCommand tele {
 	aggressives
 	monsters
 	notMonsters
-	monstersCount = 0
+	monstersCount
+	monstersCountDist
 	stopWhenHit 0
-	inLockOnly 1
+	inLockOnly 0
 	notWhileSitting 0
 	notInTown 0
-	timeout 7
-	disabled 1
+	timeout
+	disabled 0
 	whenPartyMembersNear
 	whenPartyMembersNearDist
 	inInventory
@@ -488,60 +645,47 @@ doCommand tele {
 	manualAI 0
 }
 
-useSelf_skill Heal {
-	lvl 10
+useSelf_skill {
+	lvl
 	maxCastTime 0
 	minCastTime 0
-	hp < 90%
+	hp
 	sp
+	homunculus
+	homunculus_hp
+	homunculus_sp
+	homunculus_dead
+	homunculus_resting
+	homunculus_onAction
+	homunculus_notOnAction
+	homunculus_whenIdle
+	homunculus_whenNotIdle
+	mercenary
+	mercenary_hp
+	mercenary_sp
+	mercenary_whenStatusActive
+	mercenary_whenStatusInactive
+	mercenary_onAction
+	mercenary_notOnAction
+	mercenary_whenIdle
+	mercenary_whenNotIdle
 	onAction
 	whenStatusActive
-	whenStatusInactive Silenced
-	equip_leftAccessory Clip [Creamy] [1]
-	equip_rightAccessory Clip [Vitata] [1]
+	whenStatusInactive
 	whenFollowing
 	spirit
 	amuletType
-	aggressives < 11
+	aggressives
 	monsters
 	notMonsters
 	monstersCount
+	monstersCountDist
 	stopWhenHit 0
 	inLockOnly 0
 	notWhileSitting 0
 	notInTown 0
 	timeout 0
 	disabled 0
-	whenPartyMembersNear
-	whenPartyMembersNearDist
-	inInventory
-	manualAI 0
-}
-
-useSelf_skill Improve Concentration {
-	lvl 10
-	maxCastTime 0
-	minCastTime 0
-	hp < 80%
-	sp > 70%
-	onAction
-	whenStatusActive
-	whenStatusInactive Improve Concentration
-	equip_leftAccessory Clip [Creamy] [1]
-	equip_rightAccessory Clip [1]
-	whenFollowing
-	spirit
-	amuletType
-	aggressives < 4
-	monsters
-	notMonsters
-	monstersCount
-	stopWhenHit 0
-	inLockOnly 0
-	notWhileSitting 0
-	notInTown 0
-	timeout 0
-	disabled 1
 	whenPartyMembersNear
 	whenPartyMembersNearDist
 	inInventory
@@ -552,14 +696,32 @@ useSelf_skill_smartHeal 1
 
 partySkillDistance 0..8
 
-partySkill Heal {
-	lvl 4
-	dist
-	maxDist
+partySkill {
+	lvl
+	dist 1
+	maxDist 8
 	maxCastTime 0
 	minCastTime 0
 	hp
 	sp
+	homunculus
+	homunculus_hp
+	homunculus_sp
+	homunculus_dead
+	homunculus_resting
+	homunculus_onAction
+	homunculus_notOnAction
+	homunculus_whenIdle
+	homunculus_whenNotIdle
+	mercenary
+	mercenary_hp
+	mercenary_sp
+	mercenary_whenStatusActive
+	mercenary_whenStatusInactive
+	mercenary_onAction
+	mercenary_notOnAction
+	mercenary_whenIdle
+	mercenary_whenNotIdle
 	onAction
 	whenStatusActive
 	whenStatusInactive
@@ -570,6 +732,7 @@ partySkill Heal {
 	monsters
 	notMonsters
 	monstersCount
+	monstersCountDist
 	stopWhenHit 0
 	inLockOnly 0
 	notWhileSitting 0
@@ -578,8 +741,7 @@ partySkill Heal {
 	disabled 0
 	manualAI 0
 	target
-	target_dist <= 8
-	target_hp < 85%
+	target_hp
 	target_isJob
 	target_isNotJob
 	target_whenStatusActive
@@ -587,49 +749,6 @@ partySkill Heal {
 	target_aggressives
 	target_monsters
 	target_timeout 0
-	target_deltaHp
-	target_dead 0
-	whenPartyMembersNear
-	whenPartyMembersNearDist
-	inInventory
-	isSelfSkill 0
-}
-
-partySkill {
-	lvl 10
-	dist
-	maxDist
-	maxCastTime 0
-	minCastTime 0
-	hp
-	sp > 60%
-	onAction
-	whenStatusActive
-	whenStatusInactive
-	whenFollowing
-	spirit
-	amuletType
-	aggressives < 4
-	monsters
-	notMonsters
-	monstersCount
-	stopWhenHit 0
-	inLockOnly 0
-	notWhileSitting 0
-	notInTown 0
-	timeout 0
-	disabled 0
-	manualAI 0
-	target
-	target_dist <= 8
-	target_hp
-	target_isJob Archer, Hunter
-	target_isNotJob
-	target_whenStatusActive
-	target_whenStatusInactive Weapon Perfection
-	target_aggressives
-	target_monsters
-	target_timeout 240
 	target_deltaHp
 	target_dead 0
 	whenPartyMembersNear
@@ -656,10 +775,10 @@ autoSwitch_default_arrow
 #       duplicate the weapon name for 'rightHand'
 # To attack with bare hands, specify "[NONE]" (without the quotes) for rightHand
 
-autoSwitch Creamy {
+autoSwitch {
 	rightHand
 	leftHand
-	arrow Silver Arrow
+	arrow
 	distance
 	useWeapon
 }
@@ -679,10 +798,30 @@ equipAuto {
 	monsters
 	notMonsters
 	monstersCount
+	monstersCountDist
 	weight 0
 	whileSitting 0
 	hp
 	sp
+	homunculus
+	homunculus_hp
+	homunculus_sp
+	homunculus_dead
+	homunculus_resting
+	homunculus_onAction
+	homunculus_notOnAction
+	homunculus_whenIdle
+	homunculus_whenNotIdle
+	mercenary
+	mercenary_hp
+	mercenary_sp
+	mercenary_whenStatusActive
+	mercenary_whenStatusInactive
+	mercenary_onAction
+	mercenary_notOnAction
+	mercenary_whenIdle
+	mercenary_whenNotIdle
+	onAction
 	whenStatusActive
 	whenStatusInactive
 	whenFollowing
@@ -701,59 +840,27 @@ equipAuto {
 	manualAI 0
 }
 
-useSelf_item Awakening Potion {
+useSelf_item {
 	hp
 	sp
-	onAction attack
-	whenStatusActive
-	whenStatusInactive Awakening Potion
-	whenFollowing
-	spirit
-	amuletType
-	aggressives
-	monsters
-	notMonsters
-	monstersCount
-	stopWhenHit 0
-	inLockOnly 1
-	notWhileSitting 0
-	notInTown 0
-	timeout 66
-	disabled 1
-	whenPartyMembersNear
-	whenPartyMembersNearDist
-	inInventory
-	manualAI 0
-}
-
-useSelf_item Fire Arrow Quiver {
-	hp
-	sp
-	onAction attack
-	whenStatusActive
-	whenStatusInactive
-	whenFollowing
-	spirit
-	amuletType
-	aggressives
-	monsters
-	notMonsters
-	monstersCount
-	stopWhenHit 0
-	inLockOnly 1
-	notWhileSitting 0
-	notInTown 0
-	timeout 10
-	disabled 1
-	whenPartyMembersNear
-	whenPartyMembersNearDist
-	inInventory Fire Arrow < 222
-	manualAI 0
-}
-
-useSelf_item Monster's Feed, Meat, Apple {
-	hp < 60%
-	sp
+	homunculus
+	homunculus_hp
+	homunculus_sp
+	homunculus_dead
+	homunculus_resting
+	homunculus_onAction
+	homunculus_notOnAction
+	homunculus_whenIdle
+	homunculus_whenNotIdle
+	mercenary
+	mercenary_hp
+	mercenary_sp
+	mercenary_whenStatusActive
+	mercenary_whenStatusInactive
+	mercenary_onAction
+	mercenary_notOnAction
+	mercenary_whenIdle
+	mercenary_whenNotIdle
 	onAction
 	whenStatusActive
 	whenStatusInactive
@@ -764,11 +871,12 @@ useSelf_item Monster's Feed, Meat, Apple {
 	monsters
 	notMonsters
 	monstersCount
+	monstersCountDist
 	stopWhenHit 0
-	inLockOnly 1
+	inLockOnly 0
 	notWhileSitting 0
 	notInTown 0
-	timeout 1
+	timeout 0
 	disabled 0
 	whenPartyMembersNear
 	whenPartyMembersNearDist
@@ -801,14 +909,8 @@ sellAuto_distance 3
 sellAuto_maxDistance
 sellAuto_npc_steps s
 
-storageAuto 1
-
-#storageAuto_npc comodo 195 150
-storageAuto_npc geffen 120 62
-#storageAuto_npc aldebaran 143 119
-#storageAuto_npc payo2 99 116
-#storageAuto_npc prontera 151 29
-
+storageAuto 0
+storageAuto_npc
 storageAuto_standpoint
 storageAuto_distance 3
 storageAuto_maxDistance
@@ -827,38 +929,13 @@ minStorageZeny 50
 npcTimeResponse
 npcWrongStepsMethod 0
 
-getAuto Awakening Potion {
-	minAmount 3
-	maxAmount 5
-	batchSize
-	passive 1
-	disabled 1
-}
-
-getAuto Silver Arrow {
-	minAmount 222
-	maxAmount 1777
+getAuto {
+	minAmount
+	maxAmount
 	batchSize
 	passive
 	disabled 0
 }
-
-getAuto Clip [Vitata] [1] {
-	minAmount 1
-	maxAmount 1
-	batchSize
-	passive 1
-	disabled 0
-}
-
-getAuto Clip [1] {
-	minAmount 1
-	maxAmount 1
-	batchSize
-	passive 1
-	disabled 0
-}
-
 
 ######## Debugging options; only useful for developers ########
 
@@ -876,5 +953,3 @@ logToFile_Errors
 logToFile_Messages
 logToFile_Warnings
 history_max 50
-macro_orphans terminate
-
